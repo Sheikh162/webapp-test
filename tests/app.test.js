@@ -25,7 +25,7 @@ describe('webapp', () => {
     assert.equal(body.status, 'Success');
     assert.ok(body.environment);
     assert.ok(body.version);
-    assert.equal(body.pipeline, 'github-actions');
+    assert.equal(body.pipeline, 'github-actions-practice');
     assert.equal(body.message, 'cia2');
   });
 

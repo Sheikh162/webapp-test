@@ -78,5 +78,5 @@ jobs:
             kubectl -n sheikh-devops-test rollout status deploy/sheikh-webapp-test --timeout=180s
             kubectl -n sheikh-devops-test get pods,svc -o wide
             sleep 3
-            curl -s http://localhost:30081/ | head -c 500; echo
-            curl -s http://localhost:30081/health
+            curl -s http://localhost:30082/ | head -c 500; echo
+            curl -s http://localhost:30082/health

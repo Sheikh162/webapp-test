@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sheikh-webapp
-  namespace: sheikh-devops
+  name: sheikh-webapp-test
+  namespace: sheikh-devops-test
   labels:
-    app: sheikh-webapp
+    app: sheikh-webapp-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sheikh-webapp
+      app: sheikh-webapp-test
   template:
     metadata:
       labels:
-        app: sheikh-webapp
+        app: sheikh-webapp-test
     spec:
       containers:
-        - name: webapp
-          image: ghcr.io/sheikh162/webapp:latest
+        - name: webapp-test
+          image: ghcr.io/sheikh162/webapp-test:latest
           ports:
             - containerPort: 3000
           env:
@@ -29,7 +29,7 @@ spec:
               value: "1.0.0"
           resources:
             requests:
-              cpu: "100m"
+              cpu: "100m" # millicores, therefore, 100m = 0.1 CPU
               memory: "128Mi"
             limits:
               cpu: "500m"
