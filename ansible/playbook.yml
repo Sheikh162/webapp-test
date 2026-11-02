@@ -3,9 +3,9 @@
   hosts: azure
   gather_facts: false
   vars:
-    k8s_namespace: sheikh-devops
-    app_label: sheikh-webapp
-    k8s_dir: /tmp/sheikh-webapp-k8s
+    k8s_namespace: sheikh-devops-test
+    app_label: sheikh-webapp-test
+    k8s_dir: /tmp/sheikh-webapp-test-k8s
   tasks:
     - name: Ensure namespace exists
       ansible.builtin.shell: kubectl create namespace {{ k8s_namespace }} --dry-run=client -o yaml | kubectl apply -f -
